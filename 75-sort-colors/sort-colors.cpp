@@ -22,22 +22,20 @@ public:
 
  int n=nums.size();
     int low=0;
+
+    for(int i=0;i<n;i++){
+        if(nums[i]==0){
+            swap(nums[i],nums[low]);
+            low++;
+        }
+    }
     int high=n-1;
-    int curr=0;
-    while(curr<=high){
-        if(nums[curr]==0){
-            swap(nums[low],nums[curr]);
-            low++,curr++;
-        }
-        else if(nums[curr]==1){
-            curr++;
-        }
-        else{
-            swap(nums[curr],nums[high]);
+    for(int i=n-1;i>=0;i--){
+        if(nums[i]==2){
+            swap(nums[i],nums[high]);
             high--;
         }
-
     }
-
+    
     }
 };
